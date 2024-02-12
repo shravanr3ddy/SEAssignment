@@ -14,8 +14,8 @@ app.use('/api', apiRoutes);
 // Serve static files from the React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+app.get('/', (req, res) => {
+  res.json('My API Running');
 });
 
 app.listen(port, () => {
